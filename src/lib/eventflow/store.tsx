@@ -14,6 +14,8 @@ import conferenceImage from "@/assets/event-conference.jpg";
 const STORAGE_KEY = "eventflow.data.v1";
 const THEME_KEY = "eventflow.theme";
 
+const FIRST_EVENT_ID = "evt-wedding";
+
 const uid = () => Math.random().toString(36).slice(2, 10);
 
 const seedEvents: EventItem[] = [
@@ -108,7 +110,7 @@ export function EventFlowProvider({ children }: { children: ReactNode }) {
   const [data, setData] = useState<Data>({
     events: seedEvents,
     tasks: [],
-    currentEventId: seedEvents[0].id,
+    currentEventId: FIRST_EVENT_ID,
   });
 
   useEffect(() => {
@@ -117,9 +119,9 @@ export function EventFlowProvider({ children }: { children: ReactNode }) {
       if (raw) {
         const parsed = JSON.parse(raw) as Data;
         if (parsed?.events?.length) setData(parsed);
-        else setData({ events: seedEvents, tasks: buildSeedTasks(), currentEventId: seedEvents[0].id });
+        else setData({ events: seedEvents, tasks: buildSeedTasks(), currentEventId: FIRST_EVENT_ID });
       } else {
-        setData({ events: seedEvents, tasks: buildSeedTasks(), currentEventId: seedEvents[0].id });
+        setData({ events: seedEvents, tasks: buildSeedTasks(), currentEventId: FIRST_EVENT_ID });
       }
       const storedTheme = localStorage.getItem(THEME_KEY) as Theme | null;
       const next =
@@ -127,7 +129,7 @@ export function EventFlowProvider({ children }: { children: ReactNode }) {
         (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
       setTheme(next);
     } catch {
-      setData({ events: seedEvents, tasks: buildSeedTasks(), currentEventId: seedEvents[0].id });
+      setData({ events: seedEvents, tasks: buildSeedTasks(), currentEventId: FIRST_EVENT_ID });
     }
     setReady(true);
   }, []);
