@@ -75,7 +75,7 @@ function EventsPage() {
       date,
       location: location.trim() || "To be confirmed",
       description: description.trim(),
-      image: image.trim() || undefined,
+      ...(image.trim() ? { image: image.trim() } : {}),
     });
     toast.success("Event created");
     setName("");
