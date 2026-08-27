@@ -22,8 +22,15 @@ export const CATEGORIES: Category[] = [
   { id: "budget", label: "Budget", emoji: "💰", chart: "var(--chart-1)" },
 ];
 
-export const categoryById = (id: CategoryId) =>
-  CATEGORIES.find((c) => c.id === id) ?? CATEGORIES[0];
+const FALLBACK: Category = {
+  id: "venue",
+  label: "Venue",
+  emoji: "🏛",
+  chart: "var(--chart-1)",
+};
+
+export const categoryById = (id: CategoryId): Category =>
+  CATEGORIES.find((c) => c.id === id) ?? FALLBACK;
 
 export type Task = {
   id: string;
