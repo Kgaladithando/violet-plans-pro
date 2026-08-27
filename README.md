@@ -1,29 +1,62 @@
-# Welcome to your Lovable project
+# EventFlow
 
-This project was built with [Lovable](https://lovable.dev).
+**Plan less. Organize better. Celebrate more.**
 
-## Build with Lovable
+EventFlow is a modern, minimal event management application built to help you plan and manage events with ease. Track tasks, organize work by category, monitor progress, and switch between events — all in a clean, responsive interface with light and dark modes.
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+![EventFlow preview](https://violet-plans-pro.lovable.app)
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+## Features
 
-## Development
+- **Dashboard Overview** — See your current event, overall completion progress, and today's tasks at a glance.
+- **Task Management** — Add, edit, complete, and delete tasks for any event.
+- **Categories** — Group tasks into Venue, Catering, Guests, Marketing, Logistics, and Budget.
+- **Progress Tracking** — Visual progress rings and completion stats keep you motivated.
+- **Event Management** — Create and switch between multiple events, each with its own task list.
+- **Dark Mode** — Toggle between a calming light theme and a soft dark theme.
+- **Responsive Design** — Sidebar navigation on desktop, bottom navigation on mobile.
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+## Tech Stack
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+- [TanStack Start](https://tanstack.com/start) — Full-stack React framework
+- [React](https://react.dev/) — UI library
+- [TypeScript](https://www.typescriptlang.org/) — Type safety
+- [Tailwind CSS](https://tailwindcss.com/) — Styling
+- [Lucide React](https://lucide.dev/) — Icons
+
+## Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (recommended via [nvm](https://github.com/nvm-sh/nvm))
+- A package manager such as `npm` or `bun`
+
+### Installation
+
+```bash
+git clone <repository-url>
+cd eventflow
+npm install
 npm run dev
 ```
 
-## Built with
+The app will be available at `http://localhost:8080`.
 
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+## Project Structure
+
+```text
+src/
+├── components/eventflow/   # App-specific UI components
+├── lib/eventflow/          # State management, types, and helpers
+├── routes/                 # TanStack Start routes
+├── styles.css              # Global theme and Tailwind setup
+└── ...
+```
+
+## Design
+
+EventFlow uses a calming purple-and-white palette with rounded cards, subtle shadows, and generous whitespace. The dark theme switches to a deep charcoal background with soft purple accents. All color tokens live in `src/styles.css` and are shared by Tailwind utilities.
+
+## License
+
+This project is built with [Lovable](https://lovable.dev). The code is yours to use, modify, and deploy as you see fit.
