@@ -4,8 +4,6 @@
 
 EventFlow is a modern, minimal event management application built to help you plan and manage events with ease. Track tasks, organize work by category, monitor progress, and switch between events — all in a clean, responsive interface with light and dark modes.
 
-![EventFlow preview](https://violet-plans-pro.lovable.app)
-
 ## Features
 
 - **Dashboard Overview** — See your current event, overall completion progress, and today's tasks at a glance.
