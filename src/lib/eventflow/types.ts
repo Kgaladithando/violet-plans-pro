@@ -42,6 +42,7 @@ export type EventItem = {
   date: string; // yyyy-mm-dd
   location: string;
   description: string;
+  image?: string;
 };
 
 export type Theme = "light" | "dark";
